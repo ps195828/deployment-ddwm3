@@ -1,10 +1,10 @@
 name: Laravel
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  # push:
+  #   branches: [ "main" ]
+  # pull_request:
+  #   branches: [ "main" ]
 
 jobs:
   laravel-tests:
@@ -18,11 +18,7 @@ jobs:
     - uses: actions/checkout@v3
     - name: Copy .env
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
-<<<<<<< HEAD
-    - name: update composer
-=======
     - name: Update Dependencies
->>>>>>> ab0676bf4b293d0b2fdad723224a94b8580f34e7
       run: composer update
     - name: Install Dependencies
       run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
