@@ -14,11 +14,15 @@ jobs:
     steps:
     - uses: shivammathur/setup-php@15c43e89cdef867065b0213be354c2841860869e
       with:
-        php-version: '8.0'
+        php-version: '8.1'
     - uses: actions/checkout@v3
     - name: Copy .env
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+<<<<<<< HEAD
     - name: update composer
+=======
+    - name: Update Dependencies
+>>>>>>> ab0676bf4b293d0b2fdad723224a94b8580f34e7
       run: composer update
     - name: Install Dependencies
       run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
